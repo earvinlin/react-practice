@@ -1,0 +1,52 @@
+
+
+
+== google chrome ==
+安裝完後，直接key in "google-chrome"，但重開機後會出現在「應用程式」裡。
+== visual code ==
+安裝完後，直接key in "code"，但重開機後會出現在「應用程式」裡。
+
+
+== How to add a user to sudo list ==
+sudo usermod -a -G sudo user
+
+== install REACT on Debian ==
+((( https://www.techomoro.com/how-to-install-and-set-up-react-on-debian-10-buster )))
+curl -fsSL https://deb.nodesource.com/setup_19.x | bash - &&\
+apt-get install -y nodejs
+
+npm install -g create-react-app
+
+create-react-app awesome-project
+
+-- start react --
+npm start   // if 權限不足，use " sudo npm start "
+
+
+
+== 自建新專案後，將本地專案送到Github ==
+※ ref-addr : https://gitbook.tw/chapters/github/push-to-github
+※ 需先在Github建立新專案，然後執行下列指令。
+git remote add origin git@github.com:earvinlin/react-practice.git
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     建立的專案名稱
+git branch -M main
+git push -u origin main
+
+
+
+
+https://blog.csdn.net/lucky__peng/article/details/115976089
+
+
+
+
+Question
+Error- ENOSPC: System limit for number of file watchers reached. 
+
+Resolved :
+<<<<<<
+https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
+>>>>>>
+cat /proc/sys/fs/inotify/max_user_watches
+fs.inotify.max_user_watches=524288
